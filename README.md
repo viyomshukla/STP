@@ -138,12 +138,76 @@ Tip: create a collection (**New → Collection**, e.g. "Cancer Chatbot") and sav
 5. **`/ask` (cricket):** show that it does not guess. It returns "not covered" because the search score is too low, so the AI is not even called.
 6. **`/ask` with `How is lung cancer treated?`:** it says "not covered" because only the breast cancer PDF is loaded. The AI replied `NOT_FOUND` instead of using its own knowledge.
 7. **`results.csv`:** 10 test questions × 2 methods, all with correct results.
+8. **Terminal: `python eval_retrieval.py`:** live search-quality metrics (see section 6).
 
 **Before the viva:** make sure your internet works, because the answer step calls Groq. The search itself runs offline on the laptop.
 
 **Note on page numbers:** sources show the page number in the PDF viewer, not the number printed on the page. For the breast cancer PDF, the printed number is 10 higher (PDF page 21 = printed page 31).
 
-## 6. How it works (files)
+## 6. Evaluation: does search put the correct result on top?
+
+The answer can only be correct if the search step finds the right page first. So we measure
+**search quality separately**, using standard information-retrieval metrics.
+
+### How the test was made
+1. We wrote **22 questions** about the breast cancer guideline (`LABELLED_QUESTIONS` in `eval_retrieval.py`).
+2. For each question, we **searched the PDF text for the answer** and wrote down the page that contains it.
+   Example: *"How often should follow up visits be done?"* → page 21, which says *"every 6 months ... annual up to 10 years and then 2 yearly"*.
+3. The script runs each question through **both** search methods, takes the **top 4 results** (the same 4 that are sent to the AI),
+   and checks where the correct page appears.
+
+### Metrics (0 to 1, higher is better)
+
+| Metric | Meaning | Example |
+|---|---|---|
+| **Hit@1** | Is the **first** result the correct page? | correct page 1st → 1, otherwise 0 |
+| **Recall@4** | Is the correct page **anywhere in the top 4**? | found → 1, missing → 0 |
+| **MRR** | 1 ÷ position of the first correct result | 1st → 1.0, 2nd → 0.5, 3rd → 0.33, 4th → 0.25 |
+| **nDCG@4** | Gives more credit when correct results are **higher** in the list | all correct results at the top → 1.0 |
+
+### Results (22 questions, top 4 results, 500-word chunks)
+
+| Method | Hit@1 | Recall@4 | MRR | nDCG@4 |
+|---|---|---|---|---|
+| vector (meaning) | 0.55 | 0.86 | 0.69 | 0.72 |
+| keyword (BM25) | **0.82** | **0.98** | **0.88** | **0.88** |
+
+**What this means**
+- The correct page is in the top 4 results **86% (vector)** and **98% (keyword)** of the time. The AI receives all 4 results,
+  so it almost always has the right text. This is why all 20 answers in `results.csv` are correct.
+- Keyword search puts the correct page **first** in 82% of questions. Vector search does so in 55%.
+- **Why vector is weaker here:** the embedding model `all-MiniLM-L6-v2` reads only the first **256 tokens (about 180 words)**
+  of each chunk. Our chunks are 500 words, so the end of each page is not embedded. For example, the Ki67 and trastuzumab answers
+  sit near the bottom of their pages, and vector search missed them.
+- **Possible improvement (tested):** with **150-word chunks**, vector search Hit@1 rises from **0.55 to 0.86** and MRR from **0.69 to 0.90**.
+- **Limitations:** this is a small test (one PDF, 22 questions). The questions were written after reading the PDF and reuse
+  its words, which slightly favours keyword search.
+
+### How to show it live
+Make sure the venv is active. No API key or internet is needed for this step.
+```powershell
+python eval_retrieval.py
+```
+This prints a table for every question:
+```
+Question                                   Method   Correct   Top 4 pages        Hit@1  nDCG
+How often should follow up visits be ...   vector   [21]      [21, 1, 1, 22]     1      1.0
+```
+- **Correct** is the page that really contains the answer.
+- **Top 4 pages** is what search returned, best first.
+- At the bottom is the **AVERAGE** table with Hit@1, Recall@4, MRR and nDCG@4.
+
+All rows are also saved to `retrieval_eval.csv`, which you can open in Excel.
+
+**To prove one result by hand:**
+1. Pick a row, e.g. *"How often should follow up visits be done..."*, with correct page **21**.
+2. In Swagger (`/docs`) or Postman, call `/ask` with that question. The sources show `"page": 21` first.
+3. Open `data/guidelines/Breast_Cancer_ICMR_clinical.pdf` at PDF page 21 and show the answer text on that page.
+
+**To add a new test question:** add a line like `("your question", [page]),` to `LABELLED_QUESTIONS`
+in `eval_retrieval.py` and run the script again.
+
+## 7. How it works (files)
 
 | File | Job |
 |---|---|
@@ -153,12 +217,14 @@ Tip: create a collection (**New → Collection**, e.g. "Cancer Chatbot") and sav
 | `app/llm.py` | sends the prompt to the AI model (temperature 0) |
 | `app/answer.py` | search → score check → prompt → answer + sources |
 | `app/main.py` | FastAPI endpoints |
+| `test_questions.py` | 10 questions × 2 methods → full answers saved to `results.csv` |
+| `eval_retrieval.py` | search quality metrics (Hit@1, Recall@4, MRR, nDCG@4) → `retrieval_eval.csv` |
 
 Two safety checks stop made-up answers: (1) if the best search score is below the threshold in
 `.env`, we answer "not covered" without calling the AI; (2) the AI is told to reply `NOT_FOUND`
 when the context does not contain the answer.
 
-## 7. Cost
+## 8. Cost
 
 **Everything is free.** All libraries are open-source, embeddings (`all-MiniLM-L6-v2`) and search
 (FAISS, BM25) run locally on the CPU, and the Groq API has a free tier.

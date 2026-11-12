@@ -1,0 +1,54 @@
+﻿question,method,answer,sources
+How often should follow up visits be done after breast cancer treatment?,vector,"Follow-up visits after breast-cancer treatment should be scheduled as follows:  
+
+* **First 5 years:** every 6 months (or sooner if symptoms arise) [1].  
+* **Years 6–10:** annually [1].  
+* **After 10 years:** every 2 years [1].  
+
+Patients with a significant family history or a known BRCA mutation are advised to have lifelong follow-up at 6-month or annual intervals [1].",Breast_Cancer_ICMR_clinical.pdf p.21; Breast_Cancer_ICMR_clinical.pdf p.1; Breast_Cancer_ICMR_clinical.pdf p.1; Breast_Cancer_ICMR_clinical.pdf p.22
+How often should follow up visits be done after breast cancer treatment?,keyword,"Follow-up visits are recommended every 6 months for the first 5 years after treatment (or sooner if symptoms arise). After that, visits can be yearly up to 10 years and then every 2 years thereafter. Patients with a strong family history or BRCA mutation should have lifelong 6-monthly or annual follow-up. [1]",Breast_Cancer_ICMR_clinical.pdf p.21; Breast_Cancer_ICMR_clinical.pdf p.11; Breast_Cancer_ICMR_clinical.pdf p.22; Breast_Cancer_ICMR_clinical.pdf p.4
+When is genetic testing for BRCA1/2 recommended?,vector,"Genetic testing for BRCA1/2 is recommended for women who:
+
+* have a strong family history of early-onset breast or ovarian cancer (or a calculated probability of a BRCA mutation >10%)  
+* have early-onset breast or ovarian cancer, especially triple-negative breast cancer  
+* have a personal history of bilateral breast or ovarian cancer, or both breast and ovarian cancer in the same individual  
+* have a personal history of breast or ovarian cancer together with a family history of breast, ovarian or other cancers  
+* have a known BRCA1/2 mutation in a blood relative or belong to an ethnic group with a founder mutation  
+* are otherwise concerned about hereditary cancer risk  
+
+[1]",Breast_Cancer_ICMR_clinical.pdf p.25; Breast_Cancer_ICMR_clinical.pdf p.21; Breast_Cancer_ICMR_clinical.pdf p.26; Breast_Cancer_ICMR_clinical.pdf p.16
+When is genetic testing for BRCA1/2 recommended?,keyword,"Genetic testing for BRCA1/2 is recommended for women who have a strong family history of early-onset breast or ovarian cancer (e.g., triple-negative disease, bilateral cancers, or a known BRCA mutation in a relative) or when the calculated probability of finding a BRCA mutation is >10%【1】.",Breast_Cancer_ICMR_clinical.pdf p.25; Breast_Cancer_ICMR_clinical.pdf p.27; Breast_Cancer_ICMR_clinical.pdf p.26; Breast_Cancer_ICMR_clinical.pdf p.16
+At what age should screening start for BRCA mutation carriers?,vector,"Screening for women who are BRCA mutation carriers should begin at **age 25 years or 5 years before the youngest affected family member, whichever comes first**【2】.",Breast_Cancer_ICMR_clinical.pdf p.21; Breast_Cancer_ICMR_clinical.pdf p.25; Breast_Cancer_ICMR_clinical.pdf p.26; Breast_Cancer_ICMR_clinical.pdf p.16
+At what age should screening start for BRCA mutation carriers?,keyword,"Screening for women who are BRCA mutation carriers should begin at **age 25 years or 5 years before the youngest affected family member, whichever comes first**【1】.",Breast_Cancer_ICMR_clinical.pdf p.25; Breast_Cancer_ICMR_clinical.pdf p.21; Breast_Cancer_ICMR_clinical.pdf p.6; Breast_Cancer_ICMR_clinical.pdf p.13
+Is routine breast MRI needed before breast conserving surgery?,vector,"No – routine breast MRI is **not required** before breast-conserving surgery. It is recommended only in selected situations (e.g., dense breasts with equivocal mammogram, high-risk patients, axillary node metastasis without a clear primary, or when mammography is limited by reconstruction/implants)【2】.",Breast_Cancer_ICMR_clinical.pdf p.6; Breast_Cancer_ICMR_clinical.pdf p.8; Breast_Cancer_ICMR_clinical.pdf p.11; Breast_Cancer_ICMR_clinical.pdf p.21
+Is routine breast MRI needed before breast conserving surgery?,keyword,"No – routine breast MRI is **not** required before breast-conserving surgery. It is only recommended in selected situations (e.g., dense breasts with equivocal mammogram, high-risk women, occult axillary nodes, or when mammography is limited by reconstruction/implants)【1】.",Breast_Cancer_ICMR_clinical.pdf p.8; Breast_Cancer_ICMR_clinical.pdf p.27; Breast_Cancer_ICMR_clinical.pdf p.6; Breast_Cancer_ICMR_clinical.pdf p.26
+Which type of biopsy is preferred to confirm breast cancer?,vector,The preferred method for confirming breast cancer is a **core needle biopsy** (core biopsy) [1][2].,Breast_Cancer_ICMR_clinical.pdf p.6; Breast_Cancer_ICMR_clinical.pdf p.8; Breast_Cancer_ICMR_clinical.pdf p.21; Breast_Cancer_ICMR_clinical.pdf p.12
+Which type of biopsy is preferred to confirm breast cancer?,keyword,The preferred method for confirming breast cancer is a **core needle biopsy**【1】【4】.,Breast_Cancer_ICMR_clinical.pdf p.6; Breast_Cancer_ICMR_clinical.pdf p.25; Breast_Cancer_ICMR_clinical.pdf p.12; Breast_Cancer_ICMR_clinical.pdf p.8
+What is the treatment for DCIS (ductal carcinoma in situ)?,vector,"**Treatment of DCIS (ductal carcinoma in situ)**  
+- **Surgery** is the mainstay:  
+  - *Lumpectomy* with axillary sampling or sentinel-node biopsy for DCIS without diffuse micro-calcification or multicentric disease.  
+  - *Simple mastectomy* (± reconstruction) for large, multicentric DCIS or when diffuse micro-calcification is present.  
+- **Adjuvant therapy**:  
+  - **Tamoxifen** for ER/PR-positive tumors.  
+  - **Radiotherapy** after lumpectomy for patients at higher risk of recurrence (as defined by the USC/VNPI score).  
+- **Chemotherapy** may be considered in HER2/neu-positive or ER/PR-negative DCIS, or in micro-invasive disease.  
+
+[1]",Breast_Cancer_ICMR_clinical.pdf p.10; Breast_Cancer_ICMR_clinical.pdf p.19; Breast_Cancer_ICMR_clinical.pdf p.5; Breast_Cancer_ICMR_clinical.pdf p.17
+What is the treatment for DCIS (ductal carcinoma in situ)?,keyword,"**Treatment of DCIS (ductal carcinoma in situ)**  
+- **Surgery**:  
+  - *Lumpectomy* with axillary sampling or sentinel-node biopsy for DCIS that is not multicentric and does not have diffuse micro-calcifications.  
+  - *Simple mastectomy* (± reconstruction) for large, multicentric DCIS or when diffuse micro-calcifications are present.  
+- **Adjuvant therapy**:  
+  - **Tamoxifen** for ER/PR-positive DCIS.  
+  - **Radiotherapy** after lumpectomy for patients at higher risk of recurrence (guided by the USC/VNPI score).  
+  - **Chemotherapy** may be considered in HER-2/neu-positive or ER/PR-negative DCIS or in micro-invasive disease.  
+
+These recommendations are taken from the ICMR guidelines on breast cancer management. [3]",Breast_Cancer_ICMR_clinical.pdf p.9; Breast_Cancer_ICMR_clinical.pdf p.15; Breast_Cancer_ICMR_clinical.pdf p.10; Breast_Cancer_ICMR_clinical.pdf p.5
+What radiotherapy dose is used for painful bone metastasis from breast cancer?,vector,"For painful bone metastasis from breast cancer, the guideline recommends an 8 Gy single-fraction dose to the affected bone (with margins) as the standard palliative regimen. Alternative fractionated schedules such as 20 Gy in 5 fractions or 30 Gy in 10 fractions are used for patients with impending fracture or cord compression. [1]",Breast_Cancer_ICMR_clinical.pdf p.24; Breast_Cancer_ICMR_clinical.pdf p.19; Breast_Cancer_ICMR_clinical.pdf p.20; Breast_Cancer_ICMR_clinical.pdf p.23
+What radiotherapy dose is used for painful bone metastasis from breast cancer?,keyword,"For painful bone metastasis from breast cancer, the guideline recommends an 8 Gy single-fraction radiotherapy to the affected bone (with margins) as the standard palliative dose. In cases with impending fracture or cord compression, a fractionated course of 20 Gy in 5 fractions or 30 Gy in 10 fractions may be used instead. [1]",Breast_Cancer_ICMR_clinical.pdf p.24; Breast_Cancer_ICMR_clinical.pdf p.20; Breast_Cancer_ICMR_clinical.pdf p.22; Breast_Cancer_ICMR_clinical.pdf p.6
+What is the incidence of breast cancer in rural and urban India?,vector,"Incidence of breast cancer in India is about **5 per 100,000 female population per year in rural areas** and **30 per 100,000 female population per year in urban areas**【1】.",Breast_Cancer_ICMR_clinical.pdf p.3; Breast_Cancer_ICMR_clinical.pdf p.1; Breast_Cancer_ICMR_clinical.pdf p.2; Breast_Cancer_ICMR_clinical.pdf p.1
+What is the incidence of breast cancer in rural and urban India?,keyword,"Incidence of breast cancer in India is about **5 per 100,000 female population per year in rural areas** and **30 per 100,000 per year in urban areas**【1】.",Breast_Cancer_ICMR_clinical.pdf p.3; Breast_Cancer_ICMR_clinical.pdf p.1; Breast_Cancer_ICMR_clinical.pdf p.25; Breast_Cancer_ICMR_clinical.pdf p.2
+Who won the cricket World Cup?,vector,This is not covered in the Indian cancer guidelines available to me. Please consult a doctor.,
+Who won the cricket World Cup?,keyword,This is not covered in the Indian cancer guidelines available to me. Please consult a doctor.,
+What is the best phone to buy under 20000 rupees?,vector,This is not covered in the Indian cancer guidelines available to me. Please consult a doctor.,
+What is the best phone to buy under 20000 rupees?,keyword,This is not covered in the Indian cancer guidelines available to me. Please consult a doctor.,
